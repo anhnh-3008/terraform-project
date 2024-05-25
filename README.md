@@ -1,3 +1,6 @@
+# Setup
+- Download terraform
+- `cp terraform.tfvars-example terraform.tfvars` and fill the correct informations.
 
 # Structure of project
 ```
