@@ -1,0 +1,15 @@
+aws_access_key    = "example"
+aws_secret_key    = "example"
+key_name          = "example"
+name_prefix       = "prod-"
+instance_ec2_type     = "t3.small"
+ami_id            = "ami-new-id"
+desired_capacity  = "1"
+max_size = "1"
+min_size = "2"
+subnet_ids = ["example_id1", "example_id2", "example_id3"]
+availability_zones = ["ap-southeast-2a", "ap-southeast-2b", "ap-southeast-2c"]
+db_instance_type  = "db.t2.micro"
+db_name           = "db_name"
+rds_username      = "your-rds-username"
+rds_password      = "your-rds-password"
