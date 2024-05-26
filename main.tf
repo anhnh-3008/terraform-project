@@ -47,3 +47,11 @@ module "s3" {
   source      = "./modules/s3"
   name_prefix = var.name_prefix
 }
+
+# Call CloudFront module
+module "cloudfront" {
+  source      = "./modules/cloudfront"
+  name_prefix = var.name_prefix
+  bucket_name = module.s3.bucket_name
+  bucket_arn  = module.s3.bucket_arn
+}
