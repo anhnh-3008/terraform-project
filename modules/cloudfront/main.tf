@@ -15,7 +15,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   enabled             = true
   is_ipv6_enabled     = true
   comment             = "${var.name_prefix}S3 CloudFront Distribution"
-  default_root_object = "index.html"
+  default_root_object = ""
 
   default_cache_behavior {
     target_origin_id       = "S3-${var.bucket_name}"

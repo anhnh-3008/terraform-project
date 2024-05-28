@@ -13,3 +13,5 @@ db_instance_type  = "db.t2.micro"
 db_name           = "db_name"
 rds_username      = "your-rds-username"
 rds_password      = "your-rds-password"
+budget_limit             = "150" #$
+budget_notification_email = "your-email@example.com"

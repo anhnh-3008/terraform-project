@@ -72,3 +72,18 @@ variable "rds_password" {
   description = "Password for RDS MySQL"
   type        = string
 }
+
+variable "notification_email" {
+  description = "Email address for SNS notifications and budget alerts"
+  type        = string
+}
+
+variable "alarm_sns_topic" {
+  description = "SNS topic ARN for CloudWatch alarm"
+  type        = string
+}
+
+variable "budget_limit" {
+  description = "Monthly budget limit amount"
+  type        = string
+}

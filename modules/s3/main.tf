@@ -27,6 +27,7 @@ resource "aws_s3_bucket_policy" "media_bucket_policy" {
     Version = "2012-10-17"
     Statement = [
       {
+        Sid = "PublicReadGetObject"
         Action = "s3:GetObject"
         Effect = "Allow"
         Resource = "${aws_s3_bucket.media_bucket.arn}/*"
