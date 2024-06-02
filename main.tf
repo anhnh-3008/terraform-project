@@ -55,3 +55,26 @@ module "cloudfront" {
   bucket_name = module.s3.bucket_name
   bucket_arn  = module.s3.bucket_arn
 }
+
+# Call SNS module
+module "sns" {
+  source             = "./modules/sns"
+  name_prefix        = var.name_prefix
+  notification_email = var.notification_email
+}
+
+# Call CloudWatch module
+module "cloudwatch" {
+  source                   = "./modules/cloudwatch"
+  name_prefix              = var.name_prefix
+  instance_id              = module.ec2.nodejs_instance_id
+  alarm_sns_topic          = module.sns.sns_topic_arn
+}
+
+# Call Budget module
+module "budget" {
+  source                   = "./modules/budget"
+  name_prefix              = var.name_prefix
+  budget_limit             = var.budget_limit
+  budget_notification_email = var.notification_email
+}
